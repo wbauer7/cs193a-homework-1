@@ -15,5 +15,5 @@ Notes:
     * A 5.96 inch display at 2,560 x 1,440 pixels
     * An 8.9 inch display at 2,048 x 1,536 pixels
    * The game reloads when switching between portrait and landscape orientations (that's a bug!)
-   * The hangman graphic may be difficult to see on some screens
+   * The hangman graphic may be difficult to see on some screens (you are permitted six incorrect guesses)
 
