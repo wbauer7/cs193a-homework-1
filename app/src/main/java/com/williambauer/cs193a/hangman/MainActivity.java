@@ -32,16 +32,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Do stuff onload
+        findViewById(R.id.playAgainBtn).setVisibility(View.INVISIBLE);
+
         wordSet = loadTextFile();
         wordArray = wordSet.toArray(new String[wordSet.size()]);
 
         Toast.makeText(this, String.valueOf(wordArray.length) + " words loaded", Toast.LENGTH_SHORT).show();
 
+        chooseWord();
+
+        displayWord(currentWord);
+    }
+
+    private void chooseWord() {
         Random rand = new Random();
 
         currentWord = wordArray[rand.nextInt(wordArray.length)];
-
-        displayWord(currentWord);
     }
 
     private void displayWord(String fullWord) {
@@ -127,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                     currentWord + "\n\n" + guessedLetters.getText());
         }
 
+        findViewById(R.id.playAgainBtn).setVisibility(View.VISIBLE);
     }
 
     private void updateGallows() {
@@ -157,5 +164,23 @@ public class MainActivity extends AppCompatActivity {
                 gallowsImg.setImageResource(R.drawable.hangman7);
                 break;
         }
+    }
+
+    public void playAgain(View view) {
+        Button submitGuessBtn = (Button) findViewById(R.id.submitGuessBtn);
+        TextView guessedLetters = (TextView) findViewById(R.id.guessedLetters);
+
+        guesses = new HashSet<String>();
+        gallowsImgNum = 0;
+
+        chooseWord();
+        displayWord(currentWord);
+
+        updateGallows();
+
+        guessedLetters.setText("");
+
+        submitGuessBtn.setClickable(true);
+        findViewById(R.id.playAgainBtn).setVisibility(View.INVISIBLE);
     }
 }
