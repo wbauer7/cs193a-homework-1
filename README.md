@@ -1,8 +1,7 @@
 cs193a-homework-1
 =================
 
-William Bauer
-
+William Bauer 
 wbauer7@stanford.edu
 
 CS193A Hangman
