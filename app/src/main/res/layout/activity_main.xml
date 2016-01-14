@@ -13,6 +13,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="150dp"
+        android:background="@color/deathRed"
         android:src="@drawable/hangman1"
         android:id="@+id/gallowsImg" />
 
@@ -56,8 +57,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@color/blue"
         android:text="Play Again"
-        android:id="@+id/f"
+        android:id="@+id/playAgainBtn"
         android:onClick="playAgain" />
 
 </LinearLayout>

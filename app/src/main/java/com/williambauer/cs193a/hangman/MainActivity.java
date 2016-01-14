@@ -1,5 +1,6 @@
 package com.williambauer.cs193a.hangman;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Do stuff onload
         findViewById(R.id.playAgainBtn).setVisibility(View.INVISIBLE);
+        findViewById(R.id.gallowsImg).getBackground().setAlpha(0);
 
         wordSet = loadTextFile();
         wordArray = wordSet.toArray(new String[wordSet.size()]);
@@ -123,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
     private void endGame(boolean win) {
         Button submitGuessBtn = (Button) findViewById(R.id.submitGuessBtn);
         TextView guessedLetters = (TextView) findViewById(R.id.guessedLetters);
+        ImageView gallowsImg = (ImageView) findViewById(R.id.gallowsImg);
 
         submitGuessBtn.setClickable(false);
 
@@ -131,6 +134,9 @@ public class MainActivity extends AppCompatActivity {
         } else {
             guessedLetters.setText("Sorry, you lose! \n" + "The word was " +
                     currentWord + "\n\n" + guessedLetters.getText());
+
+            // make the gallows background opaque (red color)
+            gallowsImg.getBackground().setAlpha(128);
         }
 
         findViewById(R.id.playAgainBtn).setVisibility(View.VISIBLE);
@@ -169,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
     public void playAgain(View view) {
         Button submitGuessBtn = (Button) findViewById(R.id.submitGuessBtn);
         TextView guessedLetters = (TextView) findViewById(R.id.guessedLetters);
+        ImageView gallowsImg = (ImageView) findViewById(R.id.gallowsImg);
 
         guesses = new HashSet<String>();
         gallowsImgNum = 0;
@@ -177,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
         displayWord(currentWord);
 
         updateGallows();
+        gallowsImg.getBackground().setAlpha(0);
 
         guessedLetters.setText("");
 
