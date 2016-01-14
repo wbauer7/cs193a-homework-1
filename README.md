@@ -12,6 +12,6 @@ Notes:
    * The game may take a few minutes to load at first (it's reading in the dictionary)
    * Incorrect guesses cause a momentary lag (that's a bug!)
    * The UI should scale fairly well to other screens, but it has been tested on:
-        * A 5.96 inch display at 2,560 x 1,440 pixels
-        * An 8.9 inch display at 2,048 x 1,536 pixels
+    * A 5.96 inch display at 2,560 x 1,440 pixels
+    * An 8.9 inch display at 2,048 x 1,536 pixels
 
