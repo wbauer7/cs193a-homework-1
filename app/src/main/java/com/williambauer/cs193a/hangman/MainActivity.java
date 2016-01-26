@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private HashSet<String> wordSet;
     private String[] wordArray;
     private String currentWord = "";
-    private HashSet<String> guesses = new HashSet<String>();
+    private HashSet<String> guesses = new HashSet<>();
     private int gallowsImgNum = 1;
 
 
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     // http://stackoverflow.com/questions/24291721/reading-a-text-file-line-by-line-in-android
     public HashSet<String> loadTextFile() {
         BufferedReader reader;
-        HashSet<String> words = new HashSet<String>();
+        HashSet<String> words = new HashSet<>();
 
         try {
 
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             reader = new BufferedReader(new InputStreamReader(file));
             String line = reader.readLine();
             while(line != null){
-                Log.d("StackOverflow", line);
+//                Log.d("StackOverflow", line);
                 line = reader.readLine();
 
                 // do something with the line
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         TextView guessedLetters = (TextView) findViewById(R.id.guessedLetters);
         ImageView gallowsImg = (ImageView) findViewById(R.id.gallowsImg);
 
-        guesses = new HashSet<String>();
+        guesses = new HashSet<>();
         gallowsImgNum = 0;
 
         chooseWord();
